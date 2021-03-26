@@ -21,10 +21,110 @@
 *
 **/
 
+void input_bin(FILE *file, char *fileName, int amount)
+{
+    system("CLS");
+    
+    file = fopen(fileName, "wb");
+    
+    int index;
+    
+    printf("\nEnter %d numbers:\n", amount);
+    for(index = 0; index < amount; index++)
+    {
+        int number;
+        
+        scanf("%d", &number);
+        
+        fprintf(file, " %d", number);
+    }
+    
+    fclose(file);
+    
+    return;
+}
+
+void output_bin(FILE *file, char *fileName)
+{
+    system("CLS");
+    
+    file = fopen(fileName, "rb");
+    
+    int number;
+    
+    while (!feof(file))
+    {
+        fscanf(file, "%d", &number);
+        printf("%d\n", number);
+    }
+    
+    fclose(file);
+    
+    return;
+}
+
+void sum(FILE *file, char *fileName)
+{
+    system("CLS");
+    
+    file = fopen(fileName, "rb");
+    
+    int counter = 0;
+    int number;
+    
+    int sum = 0;
+    
+    while (!feof(file))
+    {
+        if (fscanf(file, "%d", &number))
+        {
+            counter++;
+            
+            if(counter %2 == 0)
+            {
+                sum += number;
+            }
+            
+        }
+    }
+    
+    printf("Counter = %d\nSum = %d\n", counter, sum);
+    
+    alarm();
+    
+    fclose(file);
+    
+    return;
+}
+
+void min_mult(FILE *file, char *fileName, int amount)
+{
+    file = fopen(fileName, "rb");
+    
+    fpos_t left = 0, right;
+    
+    int temp_mult;
+    
+    
+    
+    for(int i = 0; i < amount; i++)
+    {
+        
+    }
+    
+    fclose(file);
+    
+    return;
+}
+
+
+
 int main()
 {
     int fileType;
     int option;
+    
+    int numberAmount;
 
     FILE *binaryFile = NULL;
     FILE *textFile = NULL;
@@ -84,15 +184,66 @@ int main()
             }
             
         } while(1);
-        
-        
-        
-        
-        
 
         break;
 
     case 2:
+        
+        printf("\nEnter name of .bin File.\n");
+
+        getstr(fileName, SIZE_OF_STRING - 5);
+
+        strcat(fileName, ".bin");   // naming
+
+        binaryFile = fopen(fileName, "r+a");
+        fclose(binaryFile);
+        
+        printf("\nEnter amount of numbers: ");
+        scanf("%d", &numberAmount);
+        
+        do
+        {
+            printf("\nChoose option"
+                   "\n1 - Input"
+                   "\n2 - Output"
+                   "\n3 - Find minimal multiply"
+                   "\n4 - Pair swap"
+                   "\n5 - Exit"
+                   "\n\nYout choice: ");
+                   
+            scanf("%d", &option);
+            
+            switch (option)
+            {
+            case 1:
+                input_bin(binaryFile, fileName, numberAmount);
+                
+                break;
+                
+            case 2:
+                output_bin(binaryFile, fileName);
+                
+                break;
+                
+            case 3:
+                
+                min_mult(binaryFile, fileName, numberAmount);
+                
+                break;
+                
+            case 4:
+                
+                break;
+                
+            case 5:
+                
+                return 0;
+            }
+            
+        } while (1);
+        
+        
+        
         break;
     }
 

@@ -31,7 +31,30 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="functions/alarm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="functions/functions.h" />
+		<Unit filename="functions/getstr.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="textFile/input_text.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="textFile/max_word_reverse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="textFile/output_text.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="textFile/reverse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="textFile/textFile.h" />
+		<Unit filename="textFile/word_count.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
