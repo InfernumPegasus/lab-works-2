@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1616754731 source:d:\универ\прога\лабы 2 сем\lab3_10\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1616754459 source:d:\универ\прога\лабы 2 сем\lab3_10\functions\alarm.c
+	"functions.h"
+
+1616754664 d:\универ\прога\лабы 2 сем\lab3_10\functions\functions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1616754608 source:d:\универ\прога\лабы 2 сем\lab3_10\functions\getstr.c
+	"functions.h"
+
+1616755161 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\input_text.c
+	"textFile.h"
+
+1616756282 d:\универ\прога\лабы 2 сем\lab3_10\textfile\textfile.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1616755952 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\output_text.c
+	"textFile.h"
+
+1616756017 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\word_count.c
+	"textFile.h"
+
