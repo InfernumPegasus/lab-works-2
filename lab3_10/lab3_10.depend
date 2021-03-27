@@ -1,8 +1,7 @@
 # depslib dependency file v1.0
-1616754731 source:d:\универ\прога\лабы 2 сем\lab3_10\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
+1616836570 source:d:\универ\прога\лабы 2 сем\lab3_10\main.c
+	"textFile/textFile.h"
+	"functions/functions.h"
 
 1616754459 source:d:\универ\прога\лабы 2 сем\lab3_10\functions\alarm.c
 	"functions.h"

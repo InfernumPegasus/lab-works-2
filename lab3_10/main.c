@@ -12,8 +12,8 @@
 *
 *   - 2 - бинарный файл
 *
-*   - 2.1 - С клавиатуры заполнить файл целыми числами.
-*   - 2.2 - Найти и напечатать номер элемента, произведение которого с предыдущим элементом минимально.
+*   - 2.1 - С клавиатуры заполнить файл целыми числами. (DONE)
+*   - 2.2 - Найти и напечатать номер элемента, произведение которого с предыдущим элементом минимально. (DONE)
 *   - 2.3 - Попарно поменять элементы местами. Если их количество нечетное, последний элемент оставить на месте.
 *
 *   РЕМАРКА:
@@ -29,14 +29,14 @@ void input_bin(FILE *file, char *fileName, int amount)
     
     int index;
     
-    printf("\nEnter %d numbers:\n", amount);
+    printf("Enter %d numbers:\n", amount);
     for(index = 0; index < amount; index++)
     {
         int number;
         
         scanf("%d", &number);
         
-        fprintf(file, " %d", number);
+        fwrite(&number, sizeof(int), 1, file);
     }
     
     fclose(file);
@@ -44,7 +44,7 @@ void input_bin(FILE *file, char *fileName, int amount)
     return;
 }
 
-void output_bin(FILE *file, char *fileName)
+void output_bin(FILE *file, char *fileName, int amount)
 {
     system("CLS");
     
@@ -52,13 +52,16 @@ void output_bin(FILE *file, char *fileName)
     
     int number;
     
-    while (!feof(file))
+    for (int i = 0; i < amount; i++)
     {
-        fscanf(file, "%d", &number);
+        fread(&number, sizeof(int), 1, file);
+        
         printf("%d\n", number);
     }
     
     fclose(file);
+    
+    alarm();
     
     return;
 }
@@ -99,20 +102,41 @@ void sum(FILE *file, char *fileName)
 
 void min_mult(FILE *file, char *fileName, int amount)
 {
+    system("CLS");
+    
     file = fopen(fileName, "rb");
     
-    fpos_t left = 0, right;
+    int tempMult;
+    int firstNumber, secondNumber, tempMin;    
     
-    int temp_mult;
+    rewind(file);
+    fread(&firstNumber, sizeof(int), 1, file);
+    fseek(file, SEEK_CUR, sizeof(int));
+    fread(&secondNumber, sizeof(int), 1, file);
+    tempMult = firstNumber * secondNumber;
+    // setting initial values
     
-    
-    
-    for(int i = 0; i < amount; i++)
+    for(int i = 1; i < amount && i + 1 < amount; i++)
     {
+        fseek(file, SEEK_CUR, sizeof(int));
+        fread(&firstNumber, sizeof(int), 1, file);
         
+        fseek(file, SEEK_SET, sizeof(int));
+        fread(&secondNumber, sizeof(int), 1, file);
+        
+        if (firstNumber * secondNumber < tempMult)
+        {
+            tempMult = firstNumber * secondNumber;
+            tempMin = secondNumber;
+        }
     }
+    // finding minimal number 
+    
+    printf("Minimal Multiplication = %d\nMinimal Number = %d\n", tempMult, tempMin);
     
     fclose(file);
+    
+    alarm();
     
     return;
 }
@@ -195,7 +219,7 @@ int main()
 
         strcat(fileName, ".bin");   // naming
 
-        binaryFile = fopen(fileName, "r+a");
+        binaryFile = fopen(fileName, "w+b");
         fclose(binaryFile);
         
         printf("\nEnter amount of numbers: ");
@@ -203,13 +227,13 @@ int main()
         
         do
         {
-            printf("\nChoose option"
+            printf("Choose option"
                    "\n1 - Input"
                    "\n2 - Output"
                    "\n3 - Find minimal multiply"
                    "\n4 - Pair swap"
                    "\n5 - Exit"
-                   "\n\nYout choice: ");
+                   "\n\nYour choice: ");
                    
             scanf("%d", &option);
             
@@ -221,7 +245,7 @@ int main()
                 break;
                 
             case 2:
-                output_bin(binaryFile, fileName);
+                output_bin(binaryFile, fileName, numberAmount);
                 
                 break;
                 
@@ -249,12 +273,6 @@ int main()
 
     return 0;
 }
-
-
-
-
-
-
 
 
 
