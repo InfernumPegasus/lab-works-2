@@ -7,13 +7,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-void input_text(FILE *file, char*);
+void input_text(char*);
 
-void output_text(FILE *file, char*);
+void output_text(char*);
 
-void word_count(FILE *file, char*);
+void word_count(char*);
 
-void max_word_reverse(FILE *file, char*);
+void max_word_reverse(char*);
 
 void reverse(char*, fpos_t, fpos_t);
 

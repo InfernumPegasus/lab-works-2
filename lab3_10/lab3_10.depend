@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1616836570 source:d:\универ\прога\лабы 2 сем\lab3_10\main.c
+1617209417 source:d:\универ\прога\лабы 2 сем\lab3_10\main.c
 	"textFile/textFile.h"
 	"functions/functions.h"
 
@@ -14,21 +14,21 @@
 1616754608 source:d:\универ\прога\лабы 2 сем\lab3_10\functions\getstr.c
 	"functions.h"
 
-1616755161 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\input_text.c
+1616871929 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\input_text.c
 	"textFile.h"
 
-1616756282 d:\универ\прога\лабы 2 сем\lab3_10\textfile\textfile.h
+1616871926 d:\универ\прога\лабы 2 сем\lab3_10\textfile\textfile.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1616755952 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\output_text.c
+1616871929 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\output_text.c
 	"textFile.h"
 
-1616756017 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\word_count.c
+1616871929 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\word_count.c
 	"textFile.h"
 
-1616756259 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\max_word_reverse.c
+1616871937 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\max_word_reverse.c
 	"textFile.h"
 
 1616756261 source:d:\универ\прога\лабы 2 сем\lab3_10\textfile\reverse.c

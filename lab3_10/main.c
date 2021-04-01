@@ -20,10 +20,31 @@
 *   - Имя файла задаётся с клавиатуры, предусмотрена защита от некорректных данных внутри файла.
 *
 **/
-
-void input_bin(FILE *file, char *fileName, int amount)
+/*
+int amount_of_numbers(char* fileName)
+{
+    int amount = 0;
+    int num;
+    
+    FILE *file;
+    
+    file = fopen(fileName, "rb");
+    
+    while (fread(&num, sizeof(int), 1, file))
+    {
+        amount++;
+    }
+    
+    fclose(file);
+    
+    return amount;
+}
+*/
+void input_bin(char *fileName, int amount)
 {
     system("CLS");
+    
+    FILE *file;
     
     file = fopen(fileName, "wb");
     
@@ -44,9 +65,11 @@ void input_bin(FILE *file, char *fileName, int amount)
     return;
 }
 
-void output_bin(FILE *file, char *fileName, int amount)
+void output_bin(char *fileName, int amount)
 {
     system("CLS");
+    
+    FILE *file;
     
     file = fopen(fileName, "rb");
     
@@ -100,39 +123,38 @@ void sum(FILE *file, char *fileName)
     return;
 }
 
-void min_mult(FILE *file, char *fileName, int amount)
+void min_mult(char *fileName)
 {
     system("CLS");
+    
+    FILE *file;
     
     file = fopen(fileName, "rb");
     
     int tempMult;
-    int firstNumber, secondNumber, tempMin;    
+    int firstNumber, secondNumber, tempMin;
     
-    rewind(file);
     fread(&firstNumber, sizeof(int), 1, file);
-    fseek(file, SEEK_CUR, sizeof(int));
+    //fseek(file, SEEK_CUR, sizeof(int));
     fread(&secondNumber, sizeof(int), 1, file);
     tempMult = firstNumber * secondNumber;
     // setting initial values
     
-    for(int i = 1; i < amount && i + 1 < amount; i++)
+    rewind(file);
+    while(!feof(file))
     {
-        fseek(file, SEEK_CUR, sizeof(int));
         fread(&firstNumber, sizeof(int), 1, file);
-        
-        fseek(file, SEEK_SET, sizeof(int));
         fread(&secondNumber, sizeof(int), 1, file);
         
-        if (firstNumber * secondNumber < tempMult)
+        if(firstNumber * secondNumber < tempMult)
         {
-            tempMult = firstNumber * secondNumber;
             tempMin = secondNumber;
+            tempMult = firstNumber * secondNumber;
         }
     }
-    // finding minimal number 
     
-    printf("Minimal Multiplication = %d\nMinimal Number = %d\n", tempMult, tempMin);
+    
+    printf("Minimal Multiplication = %d\n", tempMult);
     
     fclose(file);
     
@@ -140,6 +162,41 @@ void min_mult(FILE *file, char *fileName, int amount)
     
     return;
 }
+
+void num_reverse(char *fileName, int amount)
+{
+    system("CLS");
+    
+    FILE* file;
+    
+    file = fopen(fileName, "r+b");
+    
+    //-----------
+    
+    int firstNumber, secondNumber;
+    
+    rewind(file);
+    for(int i = 1; i < amount && i + 1 < amount; i++)
+    {
+        fread(&firstNumber, sizeof(int), 1, file);
+        fread(&secondNumber, sizeof(int), 1, file);
+        
+        fseek(file, -2 * sizeof(int), SEEK_CUR);
+        fwrite(&secondNumber, sizeof(int), 1, file);
+        fwrite(&firstNumber, sizeof(int), 1, file);
+    }
+    // доделать
+    
+    fclose(file);
+    
+    system("pause");
+    
+    output_bin(fileName, amount);
+    
+    return;
+}
+
+
 
 
 
@@ -192,16 +249,16 @@ int main()
             switch(option)
             {
             case 1:
-                input_text(textFile, fileName);
+                input_text(fileName);
                 break;
             case 2:
-                output_text(textFile, fileName);
+                output_text(fileName);
                 break;
             case 3:
-                word_count(textFile, fileName);
+                word_count(fileName);
                 break;
             case 4:
-                max_word_reverse(textFile, fileName);
+                max_word_reverse(fileName);
                 break;
             case 5:
                 return 0;
@@ -240,22 +297,24 @@ int main()
             switch (option)
             {
             case 1:
-                input_bin(binaryFile, fileName, numberAmount);
+                input_bin(fileName, numberAmount);
                 
                 break;
                 
             case 2:
-                output_bin(binaryFile, fileName, numberAmount);
+                output_bin(fileName, numberAmount);
                 
                 break;
                 
             case 3:
                 
-                min_mult(binaryFile, fileName, numberAmount);
+                min_mult(fileName);
                 
                 break;
                 
             case 4:
+                
+                num_reverse(fileName, numberAmount);
                 
                 break;
                 

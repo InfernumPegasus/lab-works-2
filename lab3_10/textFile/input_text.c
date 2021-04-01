@@ -1,8 +1,10 @@
 #include "textFile.h"
 
-void input_text(FILE *file, char *fileName)
+void input_text(char *fileName)
 {
     system("CLS");
+    
+    FILE *file;
     
     char *string = (char*)malloc( (10 * SIZE_OF_STRING) * sizeof(char) );
 

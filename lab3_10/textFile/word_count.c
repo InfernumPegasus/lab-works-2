@@ -1,8 +1,10 @@
 #include "textFile.h"
 
-void word_count(FILE *file, char *fileName)
+void word_count(char *fileName)
 {
     system("CLS");
+    
+    FILE *file;
     
     char *string = (char*)malloc( (10 * SIZE_OF_STRING) * sizeof(char) );
     int counter = 0;

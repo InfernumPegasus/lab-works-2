@@ -1,8 +1,10 @@
 #include "textFile.h"
 
-void max_word_reverse(FILE *file, char *fileName)
+void max_word_reverse(char *fileName)
 {
     system("CLS");
+    
+    FILE *file;
     
     int length = 0;
     char symbol;
@@ -41,42 +43,16 @@ void max_word_reverse(FILE *file, char *fileName)
     fsetpos(file, &maxWordPos);
 
     printf("\nMax word len: %d\n", length);
-    printf("Max pos: %llu\n", maxWordPos);
+    printf("Max pos: %lld\n", maxWordPos);
     
-    fsetpos(file, &maxWordPos);
-    // установка позиции на начало макс слова
-    
-    char left_c, right_c, temp_c;
-    // буферные переменные символов
-    
-    fpos_t left_i, right_i;
-    // буферные переменные позиций
-    
-    
-    for (left_i = maxWordPos, right_i = maxWordPos + length - 1; left_i < right_i; left_i++, right_i--)
-    {
-        fsetpos(file, &left_i);
-        fscanf(file, "c", &left_c);
-        
-        fsetpos(file, &right_i);
-        fscanf(file, "c", &right_c);
-        
-        temp_c = left_c;
-        left_c = right_c;
-        right_c = temp_c;
-        
-        fsetpos(file, &left_i);
-        printf("%c", right_c);
-        
-        fsetpos(file, &right_i);
-        printf("%c", left_c);
-    }
+    printf("\n");
+    system("pause");
     
     fclose(file);
     
     reverse(fileName, maxWordPos, maxWordPos + length - 1);
     
-    output_text(file, fileName);
+    output_text(fileName);
     
     fclose(file);
     return;
