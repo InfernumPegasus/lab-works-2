@@ -1,0 +1,3 @@
+D:/Development/C/Projects/Labs/lab5_Queue/cmake-build-debug/CMakeFiles/lab5_Queue.dir
+D:/Development/C/Projects/Labs/lab5_Queue/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Development/C/Projects/Labs/lab5_Queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir

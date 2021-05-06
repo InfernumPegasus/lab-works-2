@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Development/C/Projects/Labs/lab4_Stack/functions.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+
+D:/Development/C/Projects/Labs/lab4_Stack/stack.c
+stack.h
+D:/Development/C/Projects/Labs/lab4_Stack/stack.h
+functions.h
+D:/Development/C/Projects/Labs/lab4_Stack/functions.h
+
+D:/Development/C/Projects/Labs/lab4_Stack/stack.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+

@@ -1,0 +1,3 @@
+D:/Development/C/Projects/Labs/lab4_Stack/cmake-build-debug/CMakeFiles/lab4_Stack.dir
+D:/Development/C/Projects/Labs/lab4_Stack/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Development/C/Projects/Labs/lab4_Stack/cmake-build-debug/CMakeFiles/rebuild_cache.dir
