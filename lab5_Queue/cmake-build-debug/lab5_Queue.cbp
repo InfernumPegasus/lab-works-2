@@ -74,7 +74,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Development/C/Projects/Labs/lab5_Queue/functions.c">
+			<Option target="lab5_Queue"/>
+		</Unit>
+		<Unit filename="D:/Development/C/Projects/Labs/lab5_Queue/functions.h">
+			<Option target="lab5_Queue"/>
+		</Unit>
 		<Unit filename="D:/Development/C/Projects/Labs/lab5_Queue/main.c">
+			<Option target="lab5_Queue"/>
+		</Unit>
+		<Unit filename="D:/Development/C/Projects/Labs/lab5_Queue/queue.c">
+			<Option target="lab5_Queue"/>
+		</Unit>
+		<Unit filename="D:/Development/C/Projects/Labs/lab5_Queue/queue.h">
 			<Option target="lab5_Queue"/>
 		</Unit>
 		<Unit filename="D:/Development/C/Projects/Labs/lab5_Queue/CMakeLists.txt">

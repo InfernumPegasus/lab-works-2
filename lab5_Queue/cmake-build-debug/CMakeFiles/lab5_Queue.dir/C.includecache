@@ -6,7 +6,33 @@
 
 #IncludeRegexTransform: 
 
+D:/Development/C/Projects/Labs/lab5_Queue/functions.c
+functions.h
+D:/Development/C/Projects/Labs/lab5_Queue/functions.h
+
+D:/Development/C/Projects/Labs/lab5_Queue/functions.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+
 D:/Development/C/Projects/Labs/lab5_Queue/main.c
+functions.h
+D:/Development/C/Projects/Labs/lab5_Queue/functions.h
+queue.h
+D:/Development/C/Projects/Labs/lab5_Queue/queue.h
+
+D:/Development/C/Projects/Labs/lab5_Queue/queue.c
+functions.h
+D:/Development/C/Projects/Labs/lab5_Queue/functions.h
+queue.h
+D:/Development/C/Projects/Labs/lab5_Queue/queue.h
+
+D:/Development/C/Projects/Labs/lab5_Queue/queue.h
 stdio.h
 -
 stdlib.h

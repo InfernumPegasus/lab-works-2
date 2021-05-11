@@ -122,6 +122,33 @@ lab5_Queue/fast:
 	$(MAKE) -f CMakeFiles\lab5_Queue.dir\build.make CMakeFiles/lab5_Queue.dir/build
 .PHONY : lab5_Queue/fast
 
+functions.obj: functions.c.obj
+
+.PHONY : functions.obj
+
+# target to build an object file
+functions.c.obj:
+	$(MAKE) -f CMakeFiles\lab5_Queue.dir\build.make CMakeFiles/lab5_Queue.dir/functions.c.obj
+.PHONY : functions.c.obj
+
+functions.i: functions.c.i
+
+.PHONY : functions.i
+
+# target to preprocess a source file
+functions.c.i:
+	$(MAKE) -f CMakeFiles\lab5_Queue.dir\build.make CMakeFiles/lab5_Queue.dir/functions.c.i
+.PHONY : functions.c.i
+
+functions.s: functions.c.s
+
+.PHONY : functions.s
+
+# target to generate assembly for a file
+functions.c.s:
+	$(MAKE) -f CMakeFiles\lab5_Queue.dir\build.make CMakeFiles/lab5_Queue.dir/functions.c.s
+.PHONY : functions.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -149,6 +176,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles\lab5_Queue.dir\build.make CMakeFiles/lab5_Queue.dir/main.c.s
 .PHONY : main.c.s
 
+queue.obj: queue.c.obj
+
+.PHONY : queue.obj
+
+# target to build an object file
+queue.c.obj:
+	$(MAKE) -f CMakeFiles\lab5_Queue.dir\build.make CMakeFiles/lab5_Queue.dir/queue.c.obj
+.PHONY : queue.c.obj
+
+queue.i: queue.c.i
+
+.PHONY : queue.i
+
+# target to preprocess a source file
+queue.c.i:
+	$(MAKE) -f CMakeFiles\lab5_Queue.dir\build.make CMakeFiles/lab5_Queue.dir/queue.c.i
+.PHONY : queue.c.i
+
+queue.s: queue.c.s
+
+.PHONY : queue.s
+
+# target to generate assembly for a file
+queue.c.s:
+	$(MAKE) -f CMakeFiles\lab5_Queue.dir\build.make CMakeFiles/lab5_Queue.dir/queue.c.s
+.PHONY : queue.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -158,9 +212,15 @@ help:
 	@echo ... lab5_Queue
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... functions.obj
+	@echo ... functions.i
+	@echo ... functions.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... queue.obj
+	@echo ... queue.i
+	@echo ... queue.s
 .PHONY : help
 
 
